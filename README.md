@@ -5,6 +5,8 @@
 入口页面：
 
 - `admin/project-management.html`
+- `admin/project-category-management.html`
+- `admin/quote-review-compare.html`
 
 说明：
 
