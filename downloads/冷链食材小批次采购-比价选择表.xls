@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: "SimSun", serif; }
+    table { border-collapse: collapse; width: 920px; }
+    td, th { border: 1px solid #333; padding: 8px 10px; text-align: center; }
+    .no-border { border: 0; }
+    .company { font-size: 22px; font-weight: 700; text-align: center; height: 42px; }
+    .title { font-size: 17px; text-align: center; height: 36px; }
+    .meta { font-size: 14px; font-weight: 700; text-align: center; height: 32px; }
+    .head { font-size: 16px; font-weight: 700; }
+    .label { font-size: 15px; font-weight: 700; width: 130px; }
+    .signature { font-family: "KaiTi", serif; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <table>
+    <tr><td class="no-border company" colspan="6">省食供应链管理有限公司</td></tr>
+    <tr><td class="no-border title" colspan="6">供应商报价比价选择表（2026年版）</td></tr>
+    <tr><td class="no-border meta" colspan="6">时间：20260515　项目编号：SS202605001　项目：冷链食材小批次采购　分类：食材</td></tr>
+    <tr class="head">
+      <th>供应商</th>
+      <th>联系人</th>
+      <th>单价</th>
+      <th>供货周期</th>
+      <th>业务员选择</th>
+      <th>备注</th>
+    </tr>
+    <tr>
+      <td>宁波海味供应链</td>
+      <td>王海</td>
+      <td>12.10 元/斤</td>
+      <td>2天</td>
+      <td>中标</td>
+      <td>价格低，供货快</td>
+    </tr>
+    <tr>
+      <td>杭州鲜禾食品</td>
+      <td>赵一鸣</td>
+      <td>12.50 元/斤</td>
+      <td>3天</td>
+      <td></td>
+      <td>附件齐全</td>
+    </tr>
+    <tr>
+      <td>绍兴绿源食品</td>
+      <td>林晓</td>
+      <td>12.80 元/斤</td>
+      <td>3天</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="label">单位意见：</td><td colspan="5">同意按比价结果执行　<span class="signature">张经理</span></td></tr>
+    <tr><td class="label">业务员意见：</td><td colspan="5">建议选择宁波海味供应链，报价最低且供货周期最短　<span class="signature">刘敏</span></td></tr>
+    <tr><td class="label">最终选择：</td><td colspan="5">宁波海味供应链有限公司</td></tr>
+    <tr><td class="label">备注：</td><td colspan="5">本表由系统根据审核通过报价和中标审批结果生成。</td></tr>
+  </table>
+</body>
+</html>

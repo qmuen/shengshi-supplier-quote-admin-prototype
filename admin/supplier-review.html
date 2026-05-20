@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>供应商资料审核</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", Arial, sans-serif; font-size: 14px; color: #333; background: #f5f5f5; display: flex; height: 100vh; overflow: hidden; }
+    .sidebar { width: 218px; background: #fff; border-right: 1px solid #e8e8e8; overflow: auto; flex-shrink: 0; }
+    .logo { height: 52px; display: flex; align-items: center; padding: 0 18px; font-weight: 600; border-bottom: 1px solid #e8e8e8; }
+    .nav-group { padding: 13px 18px 5px; font-size: 11px; color: #999; }
+    .nav-item { display: block; height: 34px; line-height: 34px; padding: 0 18px 0 28px; color: #555; text-decoration: none; border-left: 3px solid transparent; font-size: 13px; }
+    .nav-item.active { background: #f0f5ff; color: #1677ff; border-left-color: #1677ff; font-weight: 600; }
+    .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .header { height: 52px; background: #fff; border-bottom: 1px solid #e8e8e8; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; flex-shrink: 0; }
+    .content { flex: 1; overflow: auto; padding: 20px 24px 72px; }
+    .page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+    .title { font-size: 17px; font-weight: 600; color: #222; margin-bottom: 4px; }
+    .desc { font-size: 13px; color: #888; line-height: 1.6; }
+    .card { background: #fff; border: 1px solid #e8e8e8; border-radius: 4px; margin-bottom: 12px; }
+    .filter { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    input, select, textarea { height: 30px; border: 1px solid #d9d9d9; border-radius: 4px; padding: 0 10px; font: inherit; font-size: 13px; background: #fff; }
+    textarea { height: 72px; padding: 8px 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 30px; padding: 0 14px; border: 1px solid #d9d9d9; border-radius: 4px; background: #fff; color: #333; font-size: 13px; text-decoration: none; }
+    .btn-primary { background: #1677ff; border-color: #1677ff; color: #fff; }
+    .btn-danger { border-color: #ffa39e; color: #cf1322; }
+    .btn-link { border: 0; background: transparent; color: #1677ff; padding: 0 4px; height: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #fafafa; text-align: left; color: #888; font-weight: 500; padding: 10px 14px; border-bottom: 1px solid #e8e8e8; white-space: nowrap; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+    .tag { display: inline-flex; padding: 1px 8px; border-radius: 3px; font-size: 12px; border: 1px solid #ffe58f; background: #fffbe6; color: #ad6800; }
+    .pagination { display: flex; justify-content: center; gap: 6px; padding: 14px; border-top: 1px solid #f0f0f0; color: #888; }
+    .divider { display: flex; align-items: center; gap: 12px; margin: 28px 0 18px; }
+    .divider-line { flex: 1; border-top: 1px dashed #bbb; }
+    .divider-label { font-size: 12px; color: #888; background: #f5f5f5; border: 1px dashed #ccc; border-radius: 10px; padding: 3px 12px; }
+    .drawer-scene { position: relative; border: 1px solid #e8e8e8; background: rgba(0,0,0,.04); min-height: 390px; display: flex; justify-content: flex-end; overflow: hidden; border-radius: 4px; }
+    .drawer-scene::before { content: "静态平铺 Drawer"; position: absolute; left: 12px; top: 9px; color: #aaa; font-size: 11px; }
+    .drawer { width: 460px; background: #fff; border-left: 1px solid #ccc; box-shadow: -4px 0 12px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+    .drawer-head { height: 48px; border-bottom: 1px solid #e8e8e8; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+    .drawer-title { font-size: 15px; font-weight: 600; }
+    .drawer-body { padding: 18px; overflow: auto; flex: 1; }
+    .drawer-foot { border-top: 1px solid #e8e8e8; padding: 10px 18px; display: flex; justify-content: flex-end; gap: 8px; }
+    .section { margin-bottom: 16px; }
+    .section-title { font-size: 13px; font-weight: 600; border-bottom: 1px solid #e8e8e8; padding-bottom: 7px; margin-bottom: 10px; }
+    .kv { display: grid; grid-template-columns: 120px 1fr; gap: 8px 0; font-size: 13px; }
+    .k { color: #888; }
+    .fields { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label { font-size: 13px; color: #555; font-weight: 500; }
+    .req-trigger { position: fixed; right: 0; top: 50%; transform: translateY(-50%); background: #fffbe6; border: 1px solid #e6d96e; border-right: 0; border-radius: 4px 0 0 4px; padding: 10px 5px; font-size: 11px; color: #777; writing-mode: vertical-rl; cursor: pointer; }
+    .req-panel { position: fixed; right: -330px; top: 52px; bottom: 0; width: 330px; background: #fffef0; border-left: 2px solid #e6d96e; transition: right .2s; box-shadow: -4px 0 12px rgba(0,0,0,.08); z-index: 10; }
+    .req-panel.open { right: 0; }
+    .req-head { padding: 12px 14px; background: #fff9d6; border-bottom: 1px solid #e6d96e; display: flex; justify-content: space-between; }
+    .req-body { padding: 12px 14px; font-size: 12px; line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">省食比价后台</div>
+    <div class="nav-group">首页</div><a class="nav-item" href="dashboard.html">首页（仪表盘）</a>
+    <div class="nav-group">供应商管理</div><a class="nav-item active" href="supplier-review.html">供应商资料审核</a><a class="nav-item" href="supplier-account-list.html">供应商账号列表</a>
+    <div class="nav-group">项目管理</div><a class="nav-item" href="project-management.html">项目列表</a>
+    <div class="nav-group">报价管理</div><a class="nav-item" href="quote-review-compare.html">报价审核与比价表</a>
+    <div class="nav-group">审批管理</div><a class="nav-item" href="award-approval.html">中标审批</a>
+    <div class="nav-group">统计与通知</div><a class="nav-item" href="stats-notifications.html">统计与通知</a>
+    <div class="nav-group">系统设置</div><a class="nav-item" href="system-settings.html">系统设置</a><a class="nav-item" href="quote-form-template.html">报价表单模板</a><a class="nav-item" href="miniapp-home-config.html">小程序首页配置</a>
+  </aside>
+  <main class="main">
+    <header class="header"><div>管理后台 / <strong>供应商资料审核</strong></div><div>超级管理员 王主任</div></header>
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <div class="title">供应商资料审核</div>
+          <div class="desc">邀请业务员选择指定上级审核供应商资料，重点核对联系人、电话、公司名称、法人代码、期望授权截止时间、营业执照和授权书。</div>
+        </div>
+        <a class="btn">导出</a>
+      </div>
+      <section class="card">
+        <div class="filter">
+          <span>关键词</span><input placeholder="公司/联系人/电话/法人代码">
+          <span>资料状态</span><select><option>全部</option></select>
+          <span>邀请业务员</span><input placeholder="请输入">
+          <span>指定审核人</span><input value="张经理">
+          <a class="btn btn-primary">查询</a><a class="btn">重置</a>
+        </div>
+        <table>
+          <thead><tr><th>公司名称</th><th>联系人</th><th>电话</th><th>法人代码</th><th>期望授权截止</th><th>邀请业务员</th><th>指定审核人</th><th>资料状态</th><th>操作</th></tr></thead>
+          <tbody>
+            <tr><td>杭州鲜禾食品有限公司</td><td>赵一鸣</td><td>138****2408</td><td>FR-91330108</td><td>2026-11-30</td><td>刘敏</td><td>张经理</td><td><span class="tag">待审核</span></td><td><a class="btn-link">审核</a></td></tr>
+            <tr><td>宁波海味供应链有限公司</td><td>王海</td><td>139****8221</td><td>FR-33020588</td><td>2026-10-31</td><td>陈强</td><td>许总监</td><td><span class="tag">待审核</span></td><td><a class="btn-link">查看</a></td></tr>
+          </tbody>
+        </table>
+        <div class="pagination">共 8 条　1　2</div>
+      </section>
+
+      <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「审核」后</div><div class="divider-line"></div></div>
+      <section class="drawer-scene">
+        <div class="drawer">
+          <div class="drawer-head"><div class="drawer-title">供应商资料详情</div><span>×</span></div>
+          <div class="drawer-body">
+            <div class="section">
+              <div class="section-title">公司与联系人资料</div>
+              <div class="kv">
+                <div class="k">公司名称</div><div>杭州鲜禾食品有限公司</div>
+                <div class="k">联系人</div><div>赵一鸣</div>
+                <div class="k">联系电话</div><div>138****2408</div>
+                <div class="k">法人代码</div><div>FR-91330108</div>
+                <div class="k">期望授权截止</div><div>2026-11-30（供应商选择，提交日起一年内）</div>
+                <div class="k">邀请业务员</div><div>刘敏</div>
+                <div class="k">指定审核人</div><div>张经理（当前账号，可审核）</div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="section-title">指派规则</div>
+              <div class="kv">
+                <div class="k">多个上级</div><div>业务员提交资料审核时必须选择 1 位</div>
+                <div class="k">一个上级</div><div>系统自动带出，无需选择</div>
+                <div class="k">无上级</div><div>不允许提交资料审核</div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="section-title">证明材料</div>
+              <div class="kv">
+                <div class="k">营业执照</div><div><a class="btn-link">预览</a> <a class="btn-link">下载</a></div>
+                <div class="k">授权书</div><div><a class="btn-link">预览</a> <a class="btn-link">下载</a></div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="section-title">审核意见</div>
+              <div class="fields"><div class="field"><label>拒绝原因</label><textarea placeholder="审核拒绝时填写"></textarea></div></div>
+            </div>
+          </div>
+          <div class="drawer-foot"><a class="btn btn-danger">审核拒绝</a><a class="btn btn-primary">审核通过</a></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div class="req-trigger" onclick="document.querySelector('.req-panel').classList.add('open')">需求说明</div>
+  <aside class="req-panel">
+    <div class="req-head"><strong>需求说明</strong><button class="btn btn-link" onclick="document.querySelector('.req-panel').classList.remove('open')">关闭</button></div>
+    <div class="req-body">供应商资料审核需核对联系人、电话、公司名称、法人代码和期望授权有效期截止时间；营业执照和授权书在供应商端分开上传，审核端也分开预览和下载。资料审核由邀请业务员指定的上级处理，未被指定但处于上级链路的账号只能查看。</div>
+  </aside>
+</body>
+</html>
