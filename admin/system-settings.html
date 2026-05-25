@@ -92,35 +92,40 @@
       <section class="card">
         <div class="tabs"><div class="tab">账号与角色</div><div class="tab active">账号层级配置</div><div class="tab">报价表单模板</div><div class="tab">小程序首页配置</div></div>
         <div class="filter">
-          <span>账号关键词</span><input placeholder="姓名/账号">
+          <span>账号关键词</span><input placeholder="账号编号/姓名/账号">
+          <span>所属单位</span><input placeholder="请输入所属单位">
           <span>角色</span><select><option>全部</option><option>业务员</option><option>上级领导</option><option>超级管理员</option></select>
           <a class="btn btn-primary">查询</a><a class="btn">重置</a>
         </div>
         <table>
-          <thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>直接上级</th><th>下级数量</th><th>状态</th><th>操作</th></tr></thead>
+          <thead><tr><th>账号编号</th><th>账号</th><th>姓名</th><th>所属单位</th><th>角色</th><th>直接上级</th><th>下级数量</th><th>状态</th><th>操作</th></tr></thead>
           <tbody>
-            <tr><td>liumin</td><td>刘敏</td><td><span class="tag tag-blue">业务员</span></td><td>张经理、许总监</td><td>0</td><td><span class="tag tag-success">启用</span></td><td><a class="btn-link">配置上级</a></td></tr>
-            <tr><td>zhangjingli</td><td>张经理</td><td><span class="tag tag-blue">上级领导</span></td><td>王主任</td><td>6</td><td><span class="tag tag-success">启用</span></td><td><a class="btn-link">配置上级</a></td></tr>
-            <tr><td>audit_admin</td><td>审计账号</td><td><span class="tag">超级管理员</span></td><td>-</td><td>全量</td><td><span class="tag tag-success">启用</span></td><td><a class="btn-link">编辑</a></td></tr>
+            <tr><td>00023</td><td>liumin</td><td>刘敏</td><td>采购一部</td><td><span class="tag tag-blue">业务员</span></td><td>张经理、许总监</td><td>0</td><td><span class="tag tag-success">启用</span></td><td><a class="btn-link">编辑</a><a class="btn-link">配置上级</a></td></tr>
+            <tr><td>00012</td><td>zhangjingli</td><td>张经理</td><td>采购中心</td><td><span class="tag tag-blue">上级领导</span></td><td>王主任</td><td>6</td><td><span class="tag tag-success">启用</span></td><td><a class="btn-link">编辑</a><a class="btn-link">配置上级</a></td></tr>
+            <tr><td>00001</td><td>audit_admin</td><td>审计账号</td><td>审计部</td><td><span class="tag">超级管理员</span></td><td>-</td><td>全量</td><td><span class="tag tag-success">启用</span></td><td><a class="btn-link">编辑</a></td></tr>
           </tbody>
         </table>
         <div class="pagination"><span>共 16 条</span><span class="page-no active">1</span><span class="page-no">2</span></div>
       </section>
 
-      <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「配置上级」后</div><div class="divider-line"></div></div>
+      <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「新增账号 / 编辑」后</div><div class="divider-line"></div></div>
 
       <section class="drawer-scene">
         <div class="drawer">
-          <div class="drawer-head"><div class="drawer-title">账号层级配置</div><span>×</span></div>
+          <div class="drawer-head"><div class="drawer-title">新增账号</div><span>×</span></div>
           <div class="drawer-body">
             <div class="section">
-              <div class="section-title">当前账号</div>
+              <div class="section-title">账号与角色</div>
               <div class="fields">
-                <div class="field"><label>账号</label><input value="张经理"></div>
-                <div class="field"><label>角色</label><input value="上级领导"></div>
-                <div class="field full"><label>直接上级</label><input value="王主任"></div>
+                <div class="field"><label>账号编号</label><input value="00024" readonly></div>
+                <div class="field"><label>登录账号</label><input value="chenqiang"></div>
+                <div class="field"><label>姓名</label><input value="陈强"></div>
+                <div class="field"><label>所属单位</label><input value="采购二部"></div>
+                <div class="field"><label>角色</label><input value="业务员"></div>
+                <div class="field"><label>状态</label><input value="启用"></div>
+                <div class="field full"><label>直接上级</label><input value="许总监、张经理"></div>
               </div>
-              <div class="hint">上级领导也可以继续设置上级，系统按层级递归查看所有下级及下下级数据。</div>
+              <div class="hint">账号编号为系统生成5位流水号；所属单位为必填，并会展示在项目列表、报价审核和中标审批中。</div>
             </div>
             <div class="section">
               <div class="section-title">配置规则</div>

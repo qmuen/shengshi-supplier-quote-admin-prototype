@@ -99,16 +99,17 @@
 
       <section class="card">
         <div class="filter">
+          <span>项目编码</span><input placeholder="XM202605250002">
           <span>项目名称</span><input placeholder="请输入">
           <span>项目状态</span><select><option>全部</option><option>报价中</option><option>已中标</option></select>
           <span>项目分类</span><select><option>全部</option></select>
           <a class="btn btn-primary">查询</a><a class="btn">重置</a>
         </div>
         <table>
-          <thead><tr><th>项目名称</th><th>分类</th><th>状态</th><th>创建人</th><th>中标供应商</th><th>报价截止</th><th>操作</th></tr></thead>
+          <thead><tr><th>项目编码</th><th>项目名称</th><th>分类</th><th>状态</th><th>中标金额</th><th>审批人</th><th>创建时间</th><th>创建人所在单位</th><th>创建人</th><th>中标供应商</th><th>报价截止</th><th>操作</th></tr></thead>
           <tbody>
-            <tr><td>冷链食材小批次采购</td><td>食材</td><td><span class="tag tag-success">已中标</span></td><td>刘敏</td><td>宁波海味供应链 王海</td><td>2026-05-14 18:00</td><td><a class="btn-link">上传中标附件</a><a class="btn-link" href="../downloads/冷链食材小批次采购-比价选择表.xls" download>下载比价选择表</a></td></tr>
-            <tr><td>门店包材补充采购</td><td>包材</td><td><span class="tag tag-blue">报价中</span></td><td>刘敏</td><td>-</td><td>2026-05-16 18:00</td><td><a class="btn-link">进入比价</a></td></tr>
+            <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td><span class="tag tag-success">已中标</span></td><td>¥12,100.00</td><td>张经理</td><td>2026-05-10 09:30</td><td>采购一部</td><td>刘敏</td><td>宁波海味供应链 王海</td><td>2026-05-14 18:00</td><td><a class="btn-link">详情</a><a class="btn-link">上传中标附件</a><a class="btn-link" href="../downloads/冷链食材小批次采购-比价选择表.xls" download>下载比价选择表</a></td></tr>
+            <tr><td>XM202605250003</td><td>门店包材补充采购</td><td>包材</td><td><span class="tag tag-blue">报价中</span></td><td>-</td><td>-</td><td>2026-05-11 14:20</td><td>采购一部</td><td>刘敏</td><td>-</td><td>2026-05-16 18:00</td><td><a class="btn-link">详情</a><a class="btn-link">进入比价</a></td></tr>
           </tbody>
         </table>
         <div class="pagination"><span>共 16 条</span><span class="page-no active">1</span><span class="page-no">2</span></div>
@@ -122,27 +123,54 @@
           <div class="xls-title">供应商报价比价选择表（2026年版）</div>
           <div class="xls-meta">
             <span>时间：20260515</span>
-            <span>项目编号：SS202605001</span>
+            <span>项目编码：XM202605250002</span>
             <span>项目：冷链食材小批次采购</span>
             <span>分类：食材</span>
+            <span>中标金额：¥12,100.00</span>
           </div>
           <table class="xls-table">
             <thead>
-              <tr><th>供应商</th><th>联系人</th><th>单价</th><th>供货周期</th><th>业务员选择</th><th>备注</th></tr>
+              <tr><th>供应商</th><th>联系人</th><th>报价单编号</th><th>项目内容</th><th>项目报价</th><th>业务员选择</th><th>备注</th></tr>
             </thead>
             <tbody>
-              <tr><td>宁波海味供应链</td><td>王海</td><td>12.10 元/斤</td><td>2天</td><td>中标</td><td>价格低，供货快</td></tr>
-              <tr><td>杭州鲜禾食品</td><td>赵一鸣</td><td>12.50 元/斤</td><td>3天</td><td></td><td>附件齐全</td></tr>
-              <tr><td>绍兴绿源食品</td><td>林晓</td><td>12.80 元/斤</td><td>3天</td><td></td><td></td></tr>
-              <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr class="xls-opinion"><td>单位意见：</td><td colspan="5">同意按比价结果执行 <span class="xls-sign">张经理</span></td></tr>
-              <tr class="xls-opinion"><td>业务员意见：</td><td colspan="5">建议选择宁波海味供应链，报价最低且供货周期最短 <span class="xls-sign">刘敏</span></td></tr>
-              <tr class="xls-opinion"><td>最终选择：</td><td colspan="5">宁波海味供应链有限公司</td></tr>
-              <tr class="xls-opinion"><td>备注：</td><td colspan="5">本表由系统根据审核通过报价和中标审批结果生成。</td></tr>
+              <tr><td>宁波海味供应链</td><td>王海</td><td>BJ202605250001</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td>中标</td><td>价格低，供货快</td></tr>
+              <tr><td>杭州鲜禾食品</td><td>赵一鸣</td><td>BJ202605250002</td><td>冷链食材供货，含配送</td><td>¥12,500.00</td><td></td><td>附件齐全</td></tr>
+              <tr><td>绍兴绿源食品</td><td>林晓</td><td>BJ202605250003</td><td>冷链食材供货，含配送</td><td>¥12,800.00</td><td></td><td></td></tr>
+              <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr class="xls-opinion"><td>单位意见：</td><td colspan="6">同意按比价结果执行 <span class="xls-sign">张经理</span></td></tr>
+              <tr class="xls-opinion"><td>业务员意见：</td><td colspan="6">建议选择宁波海味供应链，报价金额最低且供货周期满足要求 <span class="xls-sign">刘敏</span></td></tr>
+              <tr class="xls-opinion"><td>最终选择：</td><td colspan="6">宁波海味供应链有限公司</td></tr>
+              <tr class="xls-opinion"><td>备注：</td><td colspan="6">本表字段固定，项目内容、项目报价、备注来自报价模板固定字段。</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="hint">XLS 文件按该版式生成：顶部为公司和表单标题，中部为项目基础信息和报价对比，底部保留单位意见、业务员意见、最终选择与备注。</div>
+        <div class="hint">XLS 文件按该版式生成：报价对比字段固定，不随自定义表单变化；项目内容取“内容说明”，项目报价取“报价金额”，备注取“备注”。</div>
+      </section>
+
+      <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「详情」后查看项目创建内容</div><div class="divider-line"></div></div>
+
+      <section class="drawer-scene">
+        <div class="drawer">
+          <div class="drawer-head"><div class="drawer-title">项目详情</div><span>×</span></div>
+          <div class="drawer-body">
+            <div class="section">
+              <div class="section-title">业务员创建内容</div>
+              <div class="kv">
+                <div class="k">项目编码</div><div>XM202605250002</div>
+                <div class="k">项目名称</div><div>冷链食材小批次采购</div>
+                <div class="k">项目分类</div><div>食材</div>
+                <div class="k">创建时间</div><div>2026-05-10 09:30</div>
+                <div class="k">创建人</div><div>刘敏 / 采购一部</div>
+                <div class="k">报价周期</div><div>2026-05-10 10:00 至 2026-05-14 18:00</div>
+                <div class="k">确认周期</div><div>2026-05-15 至 2026-05-18</div>
+                <div class="k">报价模板</div><div>食材基础报价模板（含固定字段：内容说明、报价金额、备注）</div>
+                <div class="k">邀请供应商</div><div>宁波海味、杭州鲜禾、绍兴绿源</div>
+                <div class="k">项目说明</div><div>本次采购冷链食材若干，请按固定字段填写内容说明和报价金额。</div>
+              </div>
+            </div>
+          </div>
+          <div class="drawer-foot"><a class="btn">关闭</a></div>
+        </div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「上传中标附件」后</div><div class="divider-line"></div></div>
@@ -154,7 +182,9 @@
             <div class="section">
               <div class="section-title">中标信息</div>
               <div class="kv">
+                <div class="k">项目编码</div><div>XM202605250002</div>
                 <div class="k">项目名称</div><div>冷链食材小批次采购</div>
+                <div class="k">中标金额</div><div>¥12,100.00</div>
                 <div class="k">中标供应商</div><div>宁波海味供应链有限公司</div>
                 <div class="k">联系人</div><div>王海 139****8221</div>
                 <div class="k">可见范围</div><div>仅该中标供应商在小程序项目详情可见</div>
