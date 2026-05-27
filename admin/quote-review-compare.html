@@ -99,6 +99,7 @@
           <div class="title">报价审核与比价表</div>
           <div class="desc">先按项目选择，再进入项目报价二级页；二级页内通过“报价列表 / 比价表”页签切换。</div>
         </div>
+        <a class="btn">导出项目列表Excel</a>
       </div>
 
       <section class="card">
@@ -117,7 +118,7 @@
             <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td>刘敏</td><td>采购一部</td><td>2026-05-10 09:30</td><td>¥12,100.00</td><td>张经理</td><td><span class="tag tag-warning">2</span></td><td>3</td><td>1</td><td>2026-05-14 18:00</td><td><span class="tag tag-blue">可处理</span></td><td><a class="btn-link">查看报价</a><a class="btn-link">进入比价表</a></td></tr>
           </tbody>
         </table>
-        <div class="hint" style="padding: 0 16px 12px;">一级项目列表默认按创建时间倒序；点击中标金额、创建时间或报价截止切换正序/倒序，且只能同时选择一项排序。</div>
+        <div class="hint" style="padding: 0 16px 12px;">一级项目列表默认按创建时间倒序；点击中标金额、创建时间或报价截止切换正序/倒序，且只能同时选择一项排序；导出项目列表Excel按当前筛选条件、页签和排序结果导出。</div>
         <div class="pagination"><span>共 12 个项目</span><span class="page-no active">1</span><span class="page-no">2</span></div>
       </section>
 
@@ -126,7 +127,7 @@
       <section class="card">
         <div class="subhead">
           <div><a class="btn-link">返回项目列表</a> <span class="sub-title">XM202605250002 / 冷链食材小批次采购 / 报价列表</span></div>
-          <div class="sub-actions"><a class="btn btn-primary">进入比价表</a></div>
+          <div class="sub-actions"><a class="btn">导出报价列表Excel</a><a class="btn btn-primary">进入比价表</a></div>
         </div>
         <div class="tabs"><div class="tab active">报价列表</div><div class="tab">比价表</div></div>
         <div class="filter">
@@ -142,7 +143,7 @@
             <tr><td>BJ202605250001</td><td>宁波海味供应链有限公司</td><td>王海</td><td>139****8221</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td><span class="tag tag-warning">待审核</span></td><td>V1</td><td>2026-05-12 10:30</td><td><a class="btn-link">审核</a></td></tr>
           </tbody>
         </table>
-        <div class="hint" style="padding: 0 16px 14px;">报价列表默认按报价金额倒序；点击报价金额或提交时间切换正序/倒序，且只能同时选择一项排序。</div>
+        <div class="hint" style="padding: 0 16px 14px;">报价列表默认按报价金额倒序；点击报价金额或提交时间切换正序/倒序，且只能同时选择一项排序；导出报价列表Excel按当前项目、筛选条件和排序结果导出。</div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 在项目报价二级页切换到「比价表」页签后</div><div class="divider-line"></div></div>
@@ -150,7 +151,7 @@
       <section class="card">
         <div class="subhead">
           <div><a class="btn-link">返回报价列表</a> <span class="sub-title">XM202605250002 / 冷链食材小批次采购 / 比价表</span></div>
-          <div class="sub-actions"><a class="btn">导出比价表</a><a class="btn">导出比价选择表</a></div>
+          <div class="sub-actions"><a class="btn">导出当前列表Excel</a><a class="btn">下载比价选择表</a></div>
         </div>
         <table>
           <thead><tr><th>报价单编号</th><th>供应商</th><th>联系人</th><th>项目内容</th><th><span class="sort-link">报价金额 ↓</span></th><th>备注</th><th>报价附件</th><th>状态</th><th>操作</th></tr></thead>
@@ -159,7 +160,7 @@
             <tr><td>BJ202605250001</td><td>宁波海味供应链有限公司</td><td>王海</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td>价格低，供货快</td><td><a class="btn-link">报价单.pdf</a></td><td><span class="tag tag-success">审核通过</span></td><td><a class="btn-link">确认中标</a></td></tr>
           </tbody>
         </table>
-        <div class="hint" style="padding: 0 16px 14px;">比价表默认按报价金额倒序，仅报价金额支持点击切换正序/倒序；字段读取项目发布时的表单字段快照，不自动计算总价。</div>
+        <div class="hint" style="padding: 0 16px 14px;">比价表默认按报价金额倒序，仅报价金额支持点击切换正序/倒序；导出当前列表Excel按当前排序结果导出，下载比价选择表按线下签批表格式生成。</div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「审核」或「确认中标」后</div><div class="divider-line"></div></div>
@@ -189,7 +190,7 @@
                 <div class="field"><label>审批上级</label><select><option>张经理</option><option>李总监</option></select></div>
                 <div class="field full"><label class="required">中标意见</label><textarea>价格最低且供货周期最短，建议选择该供应商。</textarea></div>
               </div>
-              <div class="hint">报价审核在报价列表完成；确认中标在比价表页签完成，提交后只指派给所选上级审批。</div>
+              <div class="hint">报价审核在报价列表完成；确认中标时填写的中标意见会进入比价选择表“提交人意见/业务员意见”，提交后只指派给所选上级审批。</div>
             </div>
           </div>
           <div class="drawer-foot"><a class="btn">取消</a><a class="btn">审核通过</a><a class="btn btn-primary">提交中标审批</a></div>
@@ -206,6 +207,7 @@
         <div class="req-title">页面层级</div>
         <div class="req-item"><span class="req-source">返改</span><span>报价管理先展示项目列表，选择项目后进入报价列表。</span></div>
         <div class="req-item"><span class="req-source">返改</span><span>项目报价二级页包含“报价列表”和“比价表”两个页签。</span></div>
+        <div class="req-item"><span class="req-source">返改</span><span>项目列表、报价列表、比价表均支持按当前筛选条件和排序结果导出 Excel。</span></div>
       </div>
       <div class="req-group">
         <div class="req-title">报价列表</div>

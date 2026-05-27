@@ -96,7 +96,7 @@
           <div class="title">项目列表</div>
           <div class="desc">业务员创建项目、绑定报价表单模板、设置周期并邀请供应商；新建项目可选填外部单号，项目中标后可下载 XLS 格式比价选择表。</div>
         </div>
-        <a class="btn btn-primary">新建项目</a>
+        <div style="display:flex;gap:8px;"><a class="btn">导出列表Excel</a><a class="btn btn-primary">新建项目</a></div>
       </div>
 
       <section class="card">
@@ -114,7 +114,7 @@
             <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td><span class="tag tag-success">已中标</span></td><td>¥12,100.00</td><td>张经理</td><td>2026-05-10 09:30</td><td>采购一部</td><td>刘敏</td><td>宁波海味供应链 王海</td><td>2026-05-14 18:00</td><td><a class="btn-link">详情</a><a class="btn-link">上传中标附件</a><a class="btn-link" href="../downloads/冷链食材小批次采购-比价选择表.xls" download>下载比价选择表</a></td></tr>
           </tbody>
         </table>
-        <div class="hint" style="padding: 0 16px 12px;">默认按创建时间倒序；点击中标金额、创建时间或报价截止切换正序/倒序，且只能同时选择一项排序。</div>
+        <div class="hint" style="padding: 0 16px 12px;">默认按创建时间倒序；点击中标金额、创建时间或报价截止切换正序/倒序，且只能同时选择一项排序；导出列表Excel按当前筛选条件和排序结果导出。</div>
         <div class="pagination"><span>共 16 条</span><span class="page-no active">1</span><span class="page-no">2</span></div>
       </section>
 
@@ -171,14 +171,14 @@
               <tr><td>杭州鲜禾食品</td><td>赵一鸣</td><td>BJ202605250002</td><td>冷链食材供货，含配送</td><td>¥12,500.00</td><td></td><td>附件齐全</td></tr>
               <tr><td>绍兴绿源食品</td><td>林晓</td><td>BJ202605250003</td><td>冷链食材供货，含配送</td><td>¥12,800.00</td><td></td><td></td></tr>
               <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr class="xls-opinion"><td>单位意见：</td><td colspan="6">同意按比价结果执行 <span class="xls-sign">张经理</span></td></tr>
-              <tr class="xls-opinion"><td>业务员意见：</td><td colspan="6">建议选择宁波海味供应链，报价金额最低且供货周期满足要求 <span class="xls-sign">刘敏</span></td></tr>
+              <tr class="xls-opinion"><td>提交人意见：</td><td colspan="6">建议选择宁波海味供应链，报价金额最低且供货周期满足要求 <span class="xls-sign">刘敏</span></td></tr>
+              <tr class="xls-opinion"><td>审批人意见：</td><td colspan="6">同意按比价结果执行 <span class="xls-sign">张经理</span></td></tr>
               <tr class="xls-opinion"><td>最终选择：</td><td colspan="6">宁波海味供应链有限公司</td></tr>
               <tr class="xls-opinion"><td>备注：</td><td colspan="6">本表字段固定，项目内容、项目报价、备注来自报价模板固定字段。</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="hint">XLS 文件按该版式生成：报价对比字段固定，不随自定义表单变化；项目内容取“内容说明”，项目报价取“报价金额”，备注取“备注”。</div>
+        <div class="hint">XLS 文件按该版式生成：报价对比字段固定，不随自定义表单变化；项目内容取“内容说明”，项目报价取“报价金额”，备注取“备注”；提交人意见取业务员确认中标时填写的中标意见，审批人意见取中标审批通过时填写的审批意见。</div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「详情」后查看项目创建内容</div><div class="divider-line"></div></div>
@@ -245,8 +245,9 @@
     <div class="req-body">
       <div class="req-item"><span class="req-source">PRD</span><span>项目发布时生成项目表单快照，后续模板修改不影响已发布项目。</span></div>
       <div class="req-item"><span class="req-source">返改</span><span>新建项目可选填外部单号，项目列表支持单字段排序。</span></div>
+      <div class="req-item"><span class="req-source">返改</span><span>项目列表支持按当前筛选条件和排序结果导出 Excel。</span></div>
       <div class="req-item"><span class="req-source">返改</span><span>项目中标后，业务员可上传附件，仅中标供应商可在小程序详情查看。</span></div>
-      <div class="req-item"><span class="req-source">返改</span><span>已中标项目支持下载 XLS 格式比价选择表，样式参考线下签批表。</span></div>
+      <div class="req-item"><span class="req-source">返改</span><span>已中标项目支持下载 XLS 格式比价选择表；提交人意见取中标意见，审批人意见取审批通过意见。</span></div>
     </div>
   </aside>
 </body>

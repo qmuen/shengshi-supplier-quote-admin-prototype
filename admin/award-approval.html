@@ -95,6 +95,7 @@
           <div class="title">中标审批</div>
           <div class="desc">中标审批分“全部单据”和“我的单据”：全部单据可查看所有下级及下下级内容，只有指定当前账号审批的记录可处理。</div>
         </div>
+        <a class="btn">导出列表Excel</a>
       </div>
 
       <section class="card">
@@ -114,7 +115,7 @@
             <tr><td>XM202605250003</td><td>门店包材补充采购</td><td>陈强</td><td>采购二部</td><td>许总监</td><td>杭州同辉包材 林晓</td><td>¥8,800.00</td><td><span class="tag tag-warning">待审批</span></td><td><span class="tag tag-gray">仅查看</span></td><td>2026-05-13 15:40</td><td><a class="btn-link">查看</a></td></tr>
           </tbody>
         </table>
-        <div class="hint" style="padding: 0 16px 12px;">默认按提交时间倒序；点击中标金额或提交时间切换正序/倒序，且只能同时选择一项排序。</div>
+        <div class="hint" style="padding: 0 16px 12px;">默认按提交时间倒序；点击中标金额或提交时间切换正序/倒序，且只能同时选择一项排序；导出列表Excel按当前筛选条件、页签和排序结果导出。</div>
         <div class="pagination"><span>共 12 条</span><span class="page-no active">1</span><span class="page-no">2</span></div>
       </section>
 
@@ -165,9 +166,9 @@
               <div class="section-title">审批意见</div>
               <div class="fields">
                 <div class="field"><label>审批动作</label><select><option>通过</option><option>打回重选</option><option>整单作废</option></select></div>
-                <div class="field full"><label>审批意见</label><textarea placeholder="打回或作废时建议填写原因"></textarea></div>
+                <div class="field full"><label>审批意见</label><textarea>同意按比价结果执行</textarea></div>
               </div>
-              <div class="hint">选择“打回重选”后，项目退回到业务员选择中标供应商环节；选择“整单作废”后项目不可继续。若当前账号未被指定审批，则本区域只读且底部仅保留“关闭”。</div>
+              <div class="hint">审批通过时填写的审批意见会进入比价选择表“审批人意见/单位意见”；选择“打回重选”后，项目退回到业务员选择中标供应商环节。</div>
             </div>
           </div>
           <div class="drawer-foot"><a class="btn">打回重选</a><a class="btn btn-danger">整单作废</a><a class="btn btn-primary">审批通过</a></div>
@@ -216,6 +217,7 @@
         <div class="req-item"><span class="req-source">PRD</span><span>选择“打回”后，项目回到业务员选择中标供应商环节。</span></div>
         <div class="req-item"><span class="req-source">返改</span><span>审批详情需展示整体报价情况和业务员中标意见。</span></div>
         <div class="req-item"><span class="req-source">返改</span><span>中标审批列表支持按中标金额或提交时间进行单字段排序。</span></div>
+        <div class="req-item"><span class="req-source">返改</span><span>中标审批页支持按当前筛选条件、页签和排序结果导出 Excel。</span></div>
       </div>
     </div>
   </aside>
