@@ -38,6 +38,8 @@
     .tag { display: inline-flex; padding: 1px 8px; border-radius: 3px; font-size: 12px; border: 1px solid #e8e8e8; background: #f5f5f5; color: #666; }
     .tag-success { background: #f6ffed; color: #389e0d; border-color: #b7eb8f; }
     .tag-blue { background: #e6f4ff; color: #1677ff; border-color: #91caff; }
+    .sort-link { color: #1677ff; font-weight: 600; cursor: pointer; }
+    .sort-muted { color: #999; cursor: pointer; }
     .divider { display: flex; align-items: center; gap: 12px; margin: 28px 0 18px; }
     .divider-line { flex: 1; border-top: 1px dashed #bbb; }
     .divider-label { font-size: 12px; color: #888; background: #f5f5f5; border: 1px dashed #ccc; border-radius: 10px; padding: 3px 12px; }
@@ -92,7 +94,7 @@
       <div class="page-header">
         <div>
           <div class="title">项目列表</div>
-          <div class="desc">业务员创建项目、绑定报价表单模板、设置周期并邀请供应商；项目中标后可上传附件，并下载 XLS 格式比价选择表。</div>
+          <div class="desc">业务员创建项目、绑定报价表单模板、设置周期并邀请供应商；新建项目可选填外部单号，项目中标后可下载 XLS 格式比价选择表。</div>
         </div>
         <a class="btn btn-primary">新建项目</a>
       </div>
@@ -106,13 +108,44 @@
           <a class="btn btn-primary">查询</a><a class="btn">重置</a>
         </div>
         <table>
-          <thead><tr><th>项目编码</th><th>项目名称</th><th>分类</th><th>状态</th><th>中标金额</th><th>审批人</th><th>创建时间</th><th>创建人所在单位</th><th>创建人</th><th>中标供应商</th><th>报价截止</th><th>操作</th></tr></thead>
+          <thead><tr><th>项目编码</th><th>项目名称</th><th>分类</th><th>状态</th><th><span class="sort-muted">中标金额 ↕</span></th><th>审批人</th><th><span class="sort-link">创建时间 ↓</span></th><th>创建人所在单位</th><th>创建人</th><th>中标供应商</th><th><span class="sort-muted">报价截止 ↕</span></th><th>操作</th></tr></thead>
           <tbody>
-            <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td><span class="tag tag-success">已中标</span></td><td>¥12,100.00</td><td>张经理</td><td>2026-05-10 09:30</td><td>采购一部</td><td>刘敏</td><td>宁波海味供应链 王海</td><td>2026-05-14 18:00</td><td><a class="btn-link">详情</a><a class="btn-link">上传中标附件</a><a class="btn-link" href="../downloads/冷链食材小批次采购-比价选择表.xls" download>下载比价选择表</a></td></tr>
             <tr><td>XM202605250003</td><td>门店包材补充采购</td><td>包材</td><td><span class="tag tag-blue">报价中</span></td><td>-</td><td>-</td><td>2026-05-11 14:20</td><td>采购一部</td><td>刘敏</td><td>-</td><td>2026-05-16 18:00</td><td><a class="btn-link">详情</a><a class="btn-link">进入比价</a></td></tr>
+            <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td><span class="tag tag-success">已中标</span></td><td>¥12,100.00</td><td>张经理</td><td>2026-05-10 09:30</td><td>采购一部</td><td>刘敏</td><td>宁波海味供应链 王海</td><td>2026-05-14 18:00</td><td><a class="btn-link">详情</a><a class="btn-link">上传中标附件</a><a class="btn-link" href="../downloads/冷链食材小批次采购-比价选择表.xls" download>下载比价选择表</a></td></tr>
           </tbody>
         </table>
+        <div class="hint" style="padding: 0 16px 12px;">默认按创建时间倒序；点击中标金额、创建时间或报价截止切换正序/倒序，且只能同时选择一项排序。</div>
         <div class="pagination"><span>共 16 条</span><span class="page-no active">1</span><span class="page-no">2</span></div>
+      </section>
+
+      <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「新建项目」后</div><div class="divider-line"></div></div>
+
+      <section class="drawer-scene">
+        <div class="drawer">
+          <div class="drawer-head"><div class="drawer-title">新建项目</div><span>×</span></div>
+          <div class="drawer-body">
+            <div class="section">
+              <div class="section-title">基础信息</div>
+              <div class="fields">
+                <div class="field"><label>项目编码</label><input value="保存后自动生成" readonly></div>
+                <div class="field"><label>外部单号（选填）</label><input value="PO-20260525-001"></div>
+                <div class="field"><label class="required">项目名称</label><input value="冷链食材小批次采购"></div>
+                <div class="field"><label class="required">项目分类</label><select><option>食材</option><option>包材</option></select></div>
+                <div class="field"><label class="required">报价表单模板</label><select><option>食材基础报价模板</option></select></div>
+                <div class="field"><label class="required">报价截止</label><input value="2026-05-14 18:00"></div>
+                <div class="field full"><label>项目说明</label><textarea>本次采购冷链食材若干，请按固定字段填写内容说明和报价金额。</textarea></div>
+              </div>
+              <div class="hint">外部单号为选填字段，用于关联线下单据或第三方系统单据，并进入比价选择表导出。</div>
+            </div>
+            <div class="section">
+              <div class="section-title">邀请供应商</div>
+              <div class="fields">
+                <div class="field full"><label class="required">供应商账号/手机号</label><input value="宁波海味供应链 王海、杭州鲜禾食品 赵一鸣"></div>
+              </div>
+            </div>
+          </div>
+          <div class="drawer-foot"><a class="btn">保存草稿</a><a class="btn btn-primary">发布项目</a></div>
+        </div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「下载比价选择表」后导出 XLS</div><div class="divider-line"></div></div>
@@ -124,6 +157,7 @@
           <div class="xls-meta">
             <span>时间：20260515</span>
             <span>项目编码：XM202605250002</span>
+            <span>外部单号：PO-20260525-001</span>
             <span>项目：冷链食材小批次采购</span>
             <span>分类：食材</span>
             <span>中标金额：¥12,100.00</span>
@@ -157,6 +191,7 @@
               <div class="section-title">业务员创建内容</div>
               <div class="kv">
                 <div class="k">项目编码</div><div>XM202605250002</div>
+                <div class="k">外部单号</div><div>PO-20260525-001</div>
                 <div class="k">项目名称</div><div>冷链食材小批次采购</div>
                 <div class="k">项目分类</div><div>食材</div>
                 <div class="k">创建时间</div><div>2026-05-10 09:30</div>
@@ -209,6 +244,7 @@
     <div class="req-head"><strong>需求说明</strong><button class="btn btn-link" onclick="document.querySelector('.req-panel').classList.remove('open')">关闭</button></div>
     <div class="req-body">
       <div class="req-item"><span class="req-source">PRD</span><span>项目发布时生成项目表单快照，后续模板修改不影响已发布项目。</span></div>
+      <div class="req-item"><span class="req-source">返改</span><span>新建项目可选填外部单号，项目列表支持单字段排序。</span></div>
       <div class="req-item"><span class="req-source">返改</span><span>项目中标后，业务员可上传附件，仅中标供应商可在小程序详情查看。</span></div>
       <div class="req-item"><span class="req-source">返改</span><span>已中标项目支持下载 XLS 格式比价选择表，样式参考线下签批表。</span></div>
     </div>

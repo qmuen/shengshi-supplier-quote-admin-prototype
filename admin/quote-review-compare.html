@@ -44,6 +44,8 @@
     .tag-warning { background: #fffbe6; color: #ad6800; border-color: #ffe58f; }
     .tag-blue { background: #e6f4ff; color: #1677ff; border-color: #91caff; }
     .tag-gray { background: #f5f5f5; color: #666; border-color: #d9d9d9; }
+    .sort-link { color: #1677ff; font-weight: 600; cursor: pointer; }
+    .sort-muted { color: #999; cursor: pointer; }
     .divider { display: flex; align-items: center; gap: 12px; margin: 28px 0 18px; }
     .divider-line { flex: 1; border-top: 1px dashed #bbb; }
     .divider-label { font-size: 12px; color: #888; background: #f5f5f5; border: 1px dashed #ccc; border-radius: 10px; padding: 3px 12px; }
@@ -109,12 +111,13 @@
           <a class="btn btn-primary">查询</a><a class="btn">重置</a>
         </div>
         <table>
-          <thead><tr><th>项目编码</th><th>项目名称</th><th>分类</th><th>创建人</th><th>创建人所在单位</th><th>创建时间</th><th>中标金额</th><th>审批人</th><th>待审核</th><th>已通过</th><th>需重报</th><th>报价截止</th><th>当前权限</th><th>操作</th></tr></thead>
+          <thead><tr><th>项目编码</th><th>项目名称</th><th>分类</th><th>创建人</th><th>创建人所在单位</th><th><span class="sort-link">创建时间 ↓</span></th><th><span class="sort-muted">中标金额 ↕</span></th><th>审批人</th><th>待审核</th><th>已通过</th><th>需重报</th><th><span class="sort-muted">报价截止 ↕</span></th><th>当前权限</th><th>操作</th></tr></thead>
           <tbody>
-            <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td>刘敏</td><td>采购一部</td><td>2026-05-10 09:30</td><td>¥12,100.00</td><td>张经理</td><td><span class="tag tag-warning">2</span></td><td>3</td><td>1</td><td>2026-05-14 18:00</td><td><span class="tag tag-blue">可处理</span></td><td><a class="btn-link">查看报价</a><a class="btn-link">进入比价表</a></td></tr>
             <tr><td>XM202605250003</td><td>门店包材补充采购</td><td>包材</td><td>陈强</td><td>采购二部</td><td>2026-05-11 14:20</td><td>-</td><td>许总监</td><td>0</td><td>2</td><td>0</td><td>2026-05-16 18:00</td><td><span class="tag tag-gray">仅查看</span></td><td><a class="btn-link">查看报价</a></td></tr>
+            <tr><td>XM202605250002</td><td>冷链食材小批次采购</td><td>食材</td><td>刘敏</td><td>采购一部</td><td>2026-05-10 09:30</td><td>¥12,100.00</td><td>张经理</td><td><span class="tag tag-warning">2</span></td><td>3</td><td>1</td><td>2026-05-14 18:00</td><td><span class="tag tag-blue">可处理</span></td><td><a class="btn-link">查看报价</a><a class="btn-link">进入比价表</a></td></tr>
           </tbody>
         </table>
+        <div class="hint" style="padding: 0 16px 12px;">一级项目列表默认按创建时间倒序；点击中标金额、创建时间或报价截止切换正序/倒序，且只能同时选择一项排序。</div>
         <div class="pagination"><span>共 12 个项目</span><span class="page-no active">1</span><span class="page-no">2</span></div>
       </section>
 
@@ -132,13 +135,14 @@
           <a class="btn btn-primary">查询</a><a class="btn">重置</a>
         </div>
         <table>
-          <thead><tr><th>报价单编号</th><th>公司名称</th><th>联系人</th><th>手机号</th><th>项目内容</th><th>报价金额</th><th>报价状态</th><th>当前版本</th><th>提交时间</th><th>操作</th></tr></thead>
+          <thead><tr><th>报价单编号</th><th>公司名称</th><th>联系人</th><th>手机号</th><th>项目内容</th><th><span class="sort-link">报价金额 ↓</span></th><th>报价状态</th><th>当前版本</th><th><span class="sort-muted">提交时间 ↕</span></th><th>操作</th></tr></thead>
           <tbody>
-            <tr><td>BJ202605250001</td><td>宁波海味供应链有限公司</td><td>王海</td><td>139****8221</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td><span class="tag tag-warning">待审核</span></td><td>V1</td><td>2026-05-12 10:30</td><td><a class="btn-link">审核</a></td></tr>
-            <tr><td>BJ202605250002</td><td>杭州鲜禾食品有限公司</td><td>赵一鸣</td><td>138****2408</td><td>冷链食材供货，含配送</td><td>¥12,500.00</td><td><span class="tag tag-success">审核通过</span></td><td>V2</td><td>2026-05-12 11:10</td><td><a class="btn-link">查看</a></td></tr>
             <tr><td>BJ202605250003</td><td>绍兴绿源食品有限公司</td><td>林晓</td><td>137****6601</td><td>冷链食材供货，含配送</td><td>¥12,800.00</td><td><span class="tag tag-warning">需重报</span></td><td>V1</td><td>2026-05-11 16:40</td><td><a class="btn-link">查看</a></td></tr>
+            <tr><td>BJ202605250002</td><td>杭州鲜禾食品有限公司</td><td>赵一鸣</td><td>138****2408</td><td>冷链食材供货，含配送</td><td>¥12,500.00</td><td><span class="tag tag-success">审核通过</span></td><td>V2</td><td>2026-05-12 11:10</td><td><a class="btn-link">查看</a></td></tr>
+            <tr><td>BJ202605250001</td><td>宁波海味供应链有限公司</td><td>王海</td><td>139****8221</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td><span class="tag tag-warning">待审核</span></td><td>V1</td><td>2026-05-12 10:30</td><td><a class="btn-link">审核</a></td></tr>
           </tbody>
         </table>
+        <div class="hint" style="padding: 0 16px 14px;">报价列表默认按报价金额倒序；点击报价金额或提交时间切换正序/倒序，且只能同时选择一项排序。</div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 在项目报价二级页切换到「比价表」页签后</div><div class="divider-line"></div></div>
@@ -149,13 +153,13 @@
           <div class="sub-actions"><a class="btn">导出比价表</a><a class="btn">导出比价选择表</a></div>
         </div>
         <table>
-          <thead><tr><th>报价单编号</th><th>供应商</th><th>联系人</th><th>项目内容</th><th>项目报价</th><th>备注</th><th>报价附件</th><th>状态</th><th>操作</th></tr></thead>
+          <thead><tr><th>报价单编号</th><th>供应商</th><th>联系人</th><th>项目内容</th><th><span class="sort-link">报价金额 ↓</span></th><th>备注</th><th>报价附件</th><th>状态</th><th>操作</th></tr></thead>
           <tbody>
-            <tr><td>BJ202605250001</td><td>宁波海味供应链有限公司</td><td>王海</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td>价格低，供货快</td><td><a class="btn-link">报价单.pdf</a></td><td><span class="tag tag-success">审核通过</span></td><td><a class="btn-link">确认中标</a></td></tr>
             <tr><td>BJ202605250002</td><td>杭州鲜禾食品有限公司</td><td>赵一鸣</td><td>冷链食材供货，含配送</td><td>¥12,500.00</td><td>附件齐全</td><td><a class="btn-link">报价单.pdf</a></td><td><span class="tag tag-success">审核通过</span></td><td><a class="btn-link">确认中标</a></td></tr>
+            <tr><td>BJ202605250001</td><td>宁波海味供应链有限公司</td><td>王海</td><td>冷链食材供货，含配送</td><td>¥12,100.00</td><td>价格低，供货快</td><td><a class="btn-link">报价单.pdf</a></td><td><span class="tag tag-success">审核通过</span></td><td><a class="btn-link">确认中标</a></td></tr>
           </tbody>
         </table>
-        <div class="hint" style="padding: 0 16px 14px;">比价表读取项目发布时的表单字段快照，字段可横向扩展，不自动计算总价。</div>
+        <div class="hint" style="padding: 0 16px 14px;">比价表默认按报价金额倒序，仅报价金额支持点击切换正序/倒序；字段读取项目发布时的表单字段快照，不自动计算总价。</div>
       </section>
 
       <div class="divider"><div class="divider-line"></div><div class="divider-label">↓ 点击「审核」或「确认中标」后</div><div class="divider-line"></div></div>
