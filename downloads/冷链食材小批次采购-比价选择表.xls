@@ -867,7 +867,7 @@ td
    <col width="156" class="xl66" style='mso-width-source:userset;mso-width-alt:4992;'/>
    <col width="72" span="249" class="xl66" style='mso-width-source:userset;mso-width-alt:2304;'/>
    <tr height="21" style='height:15.75pt;mso-height-source:userset;mso-height-alt:315;'>
-    <td class="xl67" height="21" width="1040" colspan="7" style='height:15.75pt;width:780.00pt;border-right:1.0pt solid #333333;border-bottom:1.0pt solid #333333;' x:str>省食供应链管理有限公司</td>
+    <td class="xl67" height="21" width="1040" colspan="7" style='height:15.75pt;width:780.00pt;border-right:1.0pt solid #333333;border-bottom:1.0pt solid #333333;' x:str>广东省食品进出口集团有限公司</td>
    </tr>
    <tr height="21" style='height:15.75pt;mso-height-source:userset;mso-height-alt:315;'>
     <td class="xl67" height="21" colspan="7" style='height:15.75pt;border-right:1.0pt solid #333333;border-bottom:1.0pt solid #333333;' x:str>供应商报价比价选择表（2026年版）</td>
@@ -881,7 +881,7 @@ td
     <td class="xl68" x:str>报价单编号</td>
     <td class="xl68" x:str>项目内容</td>
     <td class="xl68" x:str>项目报价</td>
-    <td class="xl68" x:str>业务员选择</td>
+    <td class="xl68" x:str>提交人选择</td>
     <td class="xl68" x:str>备注</td>
    </tr>
    <tr height="21" style='height:15.75pt;'>
